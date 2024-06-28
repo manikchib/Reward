@@ -1,0 +1,10 @@
+.headernav {
+    /* display: flex;
+    align-items: center; */
+    width: 20%;
+}
+
+/* styles.css or component-specific CSS file */
+.svg-white {
+    filter: invert(1) brightness(2);
+  }
