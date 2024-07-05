@@ -1,0 +1,56 @@
+<div class="container">
+<h3 Style="margin-top: 35px;">Search</h3>
+<input type="text" [(ngModel)]="searchText" placeholder="Search..." />
+<h6>Applied Filters</h6>
+<div class="row">
+    <div class="col-md-3 border p-3">
+      <h6>Category</h6>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          e-voucher
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle">catalogue</button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle">Evergreen</button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle">Fashion and retail</button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-9 border p-3">
+    <div class="row d-flex justify-content-end ">
+        <button class="btn btn-primary btn-lg " style="width: auto;" (click)="filtertabele()">Sort</button>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-3 border p-3">hello</div>
+        <div class="col-md-3 border p-3">hello</div>
+        <div class="col-md-3 border p-3">hello</div>
+        <div class="col-md-3 border p-3">hello</div>
+        <div class="col-md-3 border p-3">hello</div>
+    </div>
+  </div>
+</div>
