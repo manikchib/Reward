@@ -1,0 +1,8 @@
+.fixed-size-btn{
+    width: 100%;
+    height: auto;
+    color: rgb(23, 22, 21);
+    background-color: antiquewhite;
+    border-color: burlywood;
+    border-radius: 0%;
+}

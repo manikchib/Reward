@@ -1,0 +1,17 @@
+
+    <div class="popup" [class.show]="isVisible">
+        <div class="popup-content">
+            <span class='close' (click)="popupclose()">&times;</span>
+            <h2>Filter</h2>
+            <hr>
+            <p>Sort</p>
+            <button [ngClass]="{'btn-primary': selectedButton == 'AtoZ', 'btn-secondary': selectedButton !== 'AtoZ'}" (click)="selectButton('AtoZ')">A to Z</button>
+            <button [ngClass]="{'btn-primary': selectedButton == 'ZtoA', 'btn-secondary': selectedButton !== 'ZtoA'}" (click)="selectButton('ZtoA')">Z to A</button>
+          
+
+        </div>
+        <div class="popup-footer">
+        <button class="btn btn-primary apply" (click)="sortapply()">Apply</button>
+        </div>
+    </div>
+

@@ -1,0 +1,48 @@
+.footer {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100vw; /* Set width to 100 viewport width */
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+    width: 100%; /* Set container width to 100% of footer */
+  }
+  
+  .footer-logo {
+    flex-basis: 30%;
+  }
+  
+  .footer-logo img {
+    width: 100px;
+    height: auto;
+  }
+  
+  .footer-content {
+    flex-basis: 70%;
+    text-align: left;
+  }
+  
+  .footer-content p {
+    margin-bottom: 5px;
+  }
+  
+  .footer-content a {
+    color: inherit; /* Inherit white color from parent */
+    text-decoration: none;
+  }
+  
+  .footer-content a:hover {
+    text-decoration: underline;
+  }
+
+  /* styles.css or component-specific CSS file */
+.svg-white {
+    filter: invert(1) brightness(2);
+  }
+  

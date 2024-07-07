@@ -5,18 +5,18 @@
 <div class="row">
     <div class="col-md-3 border p-3">
       <h6>Category</h6>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          e-voucher
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle fixed-size-btn" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="true" >
+    e-voucher
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
     <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle">catalogue</button>
+        <button class="btn btn-secondary dropdown-toggle fixed-size-btn" type="button" data-bs-toggle="dropdown">catalogue</button>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle">Evergreen</button>
+        <button class="btn btn-secondary dropdown-toggle fixed-size-btn" type="'button" data-bs-toggle="dropdown">Evergreen</button>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
@@ -32,7 +32,7 @@
         </div>
     </div>
     <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle">Fashion and retail</button>
+        <button class="btn btn-secondary dropdown-toggle fixed-size-btn" type="'button" data-bs-toggle="dropdown">Fashion and retail</button>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
@@ -42,15 +42,31 @@
   </div>
   <div class="col-md-9 border p-3">
     <div class="row d-flex justify-content-end ">
-        <button class="btn btn-primary btn-lg " style="width: auto;" (click)="filtertabele()">Sort</button>
+      <h5>Total count: {{ productlength}}</h5>
+        <button class="btn btn-primary btn-lg " style="width: auto;" (click)="openpopup()">Sort</button>
     </div>
-    
-    <div class="row">
-        <div class="col-md-3 border p-3">hello</div>
-        <div class="col-md-3 border p-3">hello</div>
-        <div class="col-md-3 border p-3">hello</div>
-        <div class="col-md-3 border p-3">hello</div>
-        <div class="col-md-3 border p-3">hello</div>
-    </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col" *ngFor="let product of product">
+          <div class="card shadow-sm">
+            <img [src]="product.imageurl || 'assets/reward.png'" class="bd-placeholder-img card-img-top" width="100%" height="225" alt="{{ product.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name}}</h5>
+             
+              <p class="card-text" *ngIf="product.points === 0; else quantity">
+                <strong>Out of Stock</strong>
+              </p>
+              <ng-template #quantity>
+                <p class="card-text">
+                  <strong>Quantity:</strong> {{ product.points }}
+                </p>
+              </ng-template>
+              
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
+  <app-rightpopup #popup (sortChanged)="onSortChanged($event)"></app-rightpopup>
+ 
+  
 </div>
